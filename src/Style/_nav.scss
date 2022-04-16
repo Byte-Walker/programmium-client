@@ -1,0 +1,18 @@
+@import './variable';
+@import './mixin';
+
+.nav{
+color: $primary;
+margin:30px 0px;
+@include navFlex;
+@include font;
+
+
+}
+.logo img{
+    width: 114px;
+    
+}
+.item {
+@include item;
+}

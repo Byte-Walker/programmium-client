@@ -1,0 +1,8 @@
+@import './variable';
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    background-color: $bg;
+}

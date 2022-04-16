@@ -1,0 +1,58 @@
+@mixin navFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@mixin item {
+    ul {
+        list-style: none;
+        position: relative;
+    
+        li {
+            display: inline-block;
+            padding: 0px 20px;
+    
+            a {
+                text-decoration: none;
+                color: $primary;
+                font-size: 16px;
+                position: relative;
+                li {
+                  display: none
+                }
+            }
+            a:hover{
+                color: $btnColor1;
+                ul{
+                    position: absolute;
+                 
+                    li {
+                        display: block;
+                        padding: 10px 0px;
+                       position: relative;
+                    
+                        a {
+                            text-decoration: none;
+                            color: $primary;
+                            font-size: 16px;
+
+                            
+                        }
+                        a:hover{
+                            color: $btnColor2;
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+// fonts
+@import "@fontsource/metropolis";
+@mixin font {
+    font-family:"Metropolis" ;
+}
