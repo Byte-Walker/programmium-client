@@ -1,125 +1,112 @@
-import React from "react";
+import React, { useState } from "react";
 import image from "../../images/Untitled-1.png";
 import "../../App.scss";
+
 import {
-  faHome,
   faBagShopping,
-  faChevronDown,
+  faCircleUser,
+  faXmark,
+  faBarsStaggered,
 } from "@fortawesome/free-solid-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Nav = () => {
-  return (
-    <div className="nav">
-      <div className="logo">
-        <img src={image} alt="" />
-      </div>
-      <div className="item">
-        <ul>
-          <li>
-            <a href="#">Shop</a>
-          </li>
-          <li>
-            <a href="#">
-              For Kindergarten &nbsp;
-              <FontAwesomeIcon icon={faChevronDown} />
-              <ul>
-                <li>
-                  <a href="#">Shop</a>
-                </li>
-                <li>
-                  <a href="#">For Kindergarten</a>
-                </li>
-                <li>
-                  <a href="#">For High School</a>
-                </li>
-                <li>
-                  <a href="#">For College</a>
-                </li>
-                <li>
-                  <a href="#">Courses</a>
-                </li>
-              </ul>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              For High School &nbsp;
-              <FontAwesomeIcon icon={faChevronDown} />
-              <ul>
-                <li>
-                  <a href="#">Shop</a>
-                </li>
-                <li>
-                  <a href="#">For Kindergarten</a>
-                </li>
-                <li>
-                  <a href="#">For High School</a>
-                </li>
-                <li>
-                  <a href="#">For College</a>
-                </li>
-                <li>
-                  <a href="#">Courses</a>
-                </li>
-              </ul>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              For College &nbsp;
-              <FontAwesomeIcon icon={faChevronDown} />
-              <ul>
-                <li>
-                  <a href="#">Shop</a>
-                </li>
-                <li>
-                  <a href="#">For Kindergarten</a>
-                </li>
-                <li>
-                  <a href="#">For High School</a>
-                </li>
-                <li>
-                  <a href="#">For College</a>
-                </li>
-                <li>
-                  <a href="#">Courses</a>
-                </li>
-              </ul>
-            </a>
-          </li>
+  // sidebar open close js code
+  const navLinks = document.querySelector(".nav-links");
 
-          <li>
-            <a href="#">
-              Courses &nbsp;
-              <FontAwesomeIcon icon={faChevronDown} />
-              <ul>
-                <li>
-                  <a href="#">Shop</a>
-                </li>
-                <li>
-                  <a href="#">For Kindergarten</a>
-                </li>
-                <li>
-                  <a href="#">For High School</a>
-                </li>
-                <li>
-                  <a href="#">For College</a>
-                </li>
-                <li>
-                  <a href="#">Courses</a>
-                </li>
-              </ul>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="log">
-        <button>
-          Cart({0}) <FontAwesomeIcon icon={faBagShopping} />
-        </button>
-        <button></button>
-      </div>
+  const open = () => {
+    navLinks.style.left = "0";
+  };
+  const close = () => {
+    navLinks.style.left = "-100%";
+  };
+  // sidebar submenu open close js code
+  const show1 = () => {
+    navLinks.classList.toggle("show1");
+  };
+
+  const show3 = () => {
+    navLinks.classList.toggle("show3");
+  };
+
+  return (
+    <div>
+      <nav className="nav">
+        <div className="navbar">
+          <FontAwesomeIcon
+            onClick={open}
+            className="bx bx-menu"
+            icon={faBarsStaggered}
+          />
+          <div className="logo">
+            <img src={image} alt="" />
+          </div>
+          <div className="nav-links">
+            <div className="sidebar-logo">
+              <img src={image} alt="" />
+              <FontAwesomeIcon
+                icon={faXmark}
+                className="bx bx-x"
+                onClick={close}
+              />
+            </div>
+            <ul className="links">
+              <li>
+                <a href="#">Shop</a>
+              </li>
+              <li>
+                <a href="#" onClick={show1}>
+                  For Kindergarten
+                </a>
+              </li>
+              <li>
+                <a href="#" onClick={show3}>
+                  For High School
+                </a>
+              </li>
+              <li>
+                <a href="#"> For College</a>
+              </li>
+              <li>
+                <a href="#" onClick={show3}>
+                  Courses
+                </a>
+
+                <ul className="js-sub-menu sub-menu">
+                  <li>
+                    <a href="#">Shop</a>
+                  </li>
+                  <li>
+                    <a href="#">For Kindergarten</a>
+                  </li>
+                  <li>
+                    <a href="#">For High School</a>
+                  </li>
+                  <li>
+                    <a href="#">For College</a>
+                  </li>
+                  <li>
+                    <a href="#">Courses</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button className="iconBtn">
+                  <span>Cart({0})&nbsp;</span>
+                  <FontAwesomeIcon className="icon" icon={faBagShopping} />
+                </button>
+              </li>
+              <li>
+                <button className="iconBtn">
+                  <span> My Account &nbsp; </span>
+                  <FontAwesomeIcon className="icon1" icon={faCircleUser} />
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 };
