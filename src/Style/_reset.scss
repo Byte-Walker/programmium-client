@@ -1,0 +1,9 @@
+@import './variable';
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    background-color: $bg;
+    min-height: 100vh;
+}

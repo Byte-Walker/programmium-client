@@ -1,0 +1,23 @@
+@import './mixin';
+@import'./_fonts.scss';
+@import'./variable';
+
+@media(max-width:991px){
+ .container{
+        margin: 0px 20px
+    }
+.item {
+    display: none;
+}
+
+.log{
+    display: none;
+}
+.nav level {
+    display: initial;
+}
+
+.logo img{
+    width: 80px;
+}
+}

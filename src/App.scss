@@ -1,0 +1,23 @@
+@import './Style/reset';
+@import "./Style/variable";
+@import "./Style/nav";
+@import "./Style/mixin";
+@import  './Style/mediaQuery';
+.container{
+    margin: 0px 80px;
+}
+@media (max-width:920px){
+.container {
+    margin: 0px 60px;
+}
+}
+@media (max-width:800px){
+.container {
+    margin: 0px 30px;
+}
+}
+@media (max-width:370px){
+.container {
+    margin: 0px 10px;
+}
+}
